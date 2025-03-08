@@ -1,6 +1,6 @@
-package io.laurini.wealth.database.repository;
+package io.laurini.wealth.persistence.repository;
 
-import io.laurini.wealth.database.model.Example;
+import io.laurini.wealth.persistence.model.Example;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package io.laurini.wealth.database.model;
+package io.laurini.wealth.persistence.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

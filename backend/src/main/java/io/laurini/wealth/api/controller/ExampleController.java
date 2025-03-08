@@ -1,7 +1,7 @@
 package io.laurini.wealth.api.controller;
 
 import io.laurini.wealth.api.dto.ExampleDTO;
-import io.laurini.wealth.business.service.ExampleService;
+import io.laurini.wealth.operation.service.ExampleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

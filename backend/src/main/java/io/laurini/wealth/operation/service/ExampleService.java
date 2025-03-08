@@ -1,8 +1,8 @@
-package io.laurini.wealth.business.service;
+package io.laurini.wealth.operation.service;
 
 import io.laurini.wealth.api.dto.ExampleDTO;
-import io.laurini.wealth.database.model.Example;
-import io.laurini.wealth.database.repository.ExampleRepository;
+import io.laurini.wealth.persistence.model.Example;
+import io.laurini.wealth.persistence.repository.ExampleRepository;
 import org.springframework.stereotype.Service;
 
 @Service
