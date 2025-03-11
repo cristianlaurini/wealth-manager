@@ -3,6 +3,7 @@ package io.laurini.wealth.operation.service;
 import io.laurini.wealth.api.dto.UserDTO;
 import io.laurini.wealth.persistence.model.User;
 import io.laurini.wealth.persistence.repository.UserRepository;
+import io.laurini.wealth.util.exception.UserAlreadyRegisteredException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,10 @@ public class UserService {
         this.authentication = authentication;
     }
 
-    public UserDTO register(UserDTO input) {
+    public void register(UserDTO input) {
         User entity = User.builder().username(input.getUsername()).password(input.getPassword()).build();
+        if (repository.existsByUsername(input.getUsername())) throw new UserAlreadyRegisteredException();
         repository.save(entity);
-        return input;
     }
 
     public String authenticate(UserDTO input) {
