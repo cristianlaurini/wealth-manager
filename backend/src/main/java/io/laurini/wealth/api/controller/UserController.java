@@ -1,6 +1,7 @@
 package io.laurini.wealth.api.controller;
 
 import io.laurini.wealth.api.dto.ExceptionDTO;
+import io.laurini.wealth.api.dto.TokenDTO;
 import io.laurini.wealth.api.dto.UserDTO;
 import io.laurini.wealth.operation.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -64,8 +65,9 @@ public class UserController {
                     schema = @Schema(implementation = ExceptionDTO.class)
             )
     )
-    public ResponseEntity<String> login(@RequestBody UserDTO input) {
-        return ResponseEntity.ok(service.authenticate(input));
+    public ResponseEntity<TokenDTO> login(@RequestBody UserDTO input) {
+        TokenDTO token = TokenDTO.builder().token(service.authenticate(input)).build();
+        return ResponseEntity.ok(token);
     }
 
 }

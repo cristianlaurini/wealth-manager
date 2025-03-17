@@ -36,5 +36,4 @@ public class UserService {
         return jwt.generate(input.getUsername());
     }
 
-
 }
